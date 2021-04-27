@@ -38,3 +38,9 @@ Create 3 .txt files ,
 
 Run the program.
 * `python3 instaTrack.py`
+
+# Disclaimer
+
+* Dont forget to edit the seconds i mention before at [Setup](https://github.com/Boryyy/instaTrack#setup) , it will improve the script and you can get the track faster.
+
+* First time that you run the script , it will show "Added Followers" the full list of your followers , then 2nd run and future ones will show who removed and who added you.
