@@ -30,5 +30,11 @@ If you think the program is taking too long scanning your followers , you can lo
 Line 42,45
 * `user_input = ('700')` , i have 500 followers so i put it at 700 , you can test your own.
 
+Create 3 .txt files , 
+
+* `followers.txt`
+* `following.txt`
+* `oldfollowers.txt`
+
 Run the program.
 * `python3 instaTrack.py`
