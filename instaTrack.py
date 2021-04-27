@@ -1,7 +1,6 @@
 import os
 import time
 import selenium
-import difflib
 import sys
 import numpy as np
 
