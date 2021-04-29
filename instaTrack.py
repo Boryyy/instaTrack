@@ -1,6 +1,7 @@
 import os
 import time
 import selenium
+import difflib
 import sys
 import numpy as np
 
@@ -29,7 +30,6 @@ def lastClose():
         quit()
 
 
-
 USERNAME = '' # put your bot account username
 PASSWORD = '' # put your bot account password
 
@@ -37,6 +37,7 @@ PASSWORD = '' # put your bot account password
 usr = ('') # put the account you want to track
 
 #TIME = FOLLOWERS / TIME1 FOLLOWING
+
 
 user_input = ('700')
 TIME = 0.070 * int(user_input)
@@ -172,8 +173,10 @@ def scrape(username):
     writeToFile = ("y")
     if(writeToFile.upper() == "YES" or writeToFile.upper() == "Y"):
         greenPrint("\nEveryhing saved - instaTrack.txt'\n")
-        instaTrack = open("instaTrack.txt", "w")
+        instaTrack = open("instaTrack.txt", "a+")
       
+        instaTrack.write("\n=================================\n\n")
+        instaTrack.write('%s\n' % date.today().strftime("%B %d, %Y"))
         
         instaTrack.write("\n=================================\n\nList 1 - People that you are following, but they do not follow you back:\n\n")
         for count, follower in enumerate(notFollower):
