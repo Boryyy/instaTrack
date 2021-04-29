@@ -1,9 +1,8 @@
 import os
 import time
 import selenium
-import difflib
 import sys
-import numpy as np
+
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -16,6 +15,7 @@ from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager as CM
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
+
 
 def greenPrint(message):
     CGREEN = '\33[32m'
@@ -36,14 +36,14 @@ PASSWORD = '' # put your bot account password
 
 usr = ('') # put the account you want to track
 
-#TIME = FOLLOWERS / TIME1 FOLLOWING
 
+#TIME = FOLLOWERS / TIME1 FOLLOWING
 
 user_input = ('700')
 TIME = 0.070 * int(user_input)
 
-user_input = ('700')
-TIME1 = 0.070 * int(user_input)
+user_input1 = ('700')
+TIME1 = 0.070 * int(user_input1)
 
 
 def scrape(username):
@@ -93,7 +93,7 @@ def scrape(username):
     print('Scrapping followers...')
     for i in range(round(TIME)):
         ActionChains(bot).send_keys(Keys.END).perform()
-        time.sleep(3)
+        time.sleep(0.5)
 
         followers = bot.find_elements_by_xpath(
             '//*[@id="react-root"]/section/main/div/ul/div/li/div/div[1]/div[2]/div[1]/a')
@@ -131,7 +131,7 @@ def scrape(username):
     print('Scrapping following...')
     for i in range(round(TIME1)):
         ActionChains(bot).send_keys(Keys.END).perform()
-        time.sleep(3)
+        time.sleep(0.5)
 
         following = bot.find_elements_by_xpath(
             '//*[@id="react-root"]/section/main/div/ul/div/li/div/div[1]/div[2]/div[1]/a')
@@ -175,10 +175,10 @@ def scrape(username):
         greenPrint("\nEveryhing saved - instaTrack.txt'\n")
         instaTrack = open("instaTrack.txt", "a+")
       
-        instaTrack.write("\n=================================\n\n")
+        instaTrack.write("\n=================================\n")
         instaTrack.write('%s\n' % date.today().strftime("%B %d, %Y"))
         
-        instaTrack.write("\n=================================\n\nList 1 - People that you are following, but they do not follow you back:\n\n")
+        instaTrack.write("=================================\n\nList 1 - People that you are following, but they do not follow you back:\n\n")
         for count, follower in enumerate(notFollower):
             instaTrack.write(("{:02d}: {}\n".format(count+1, follower)))
         
