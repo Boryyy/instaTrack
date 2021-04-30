@@ -17,7 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager as CM
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
 from dhooks import Webhook
-hook = Webhook('https://discord.com/api/webhooks/.........') # put your discord webhook link!!
+hook = Webhook('https://discord.com/api/webhooks/......') # put your discord webhook link!
 disc = ("This is your first time running the script , run again to get unfollowers/added.")
 def greenPrint(message):
     CGREEN = '\33[32m'
@@ -180,8 +180,9 @@ def scrape(username):
       
         notFollower = list(set(users1) - set(users))
         greenPrint("\nPeople that you are following, but they do not follow you back:\n\n" + ' || '.join(notFollower) + "\n")
+    
     f1 = open('oldfollowers.txt', 'w')
-    greenPrint("oldfollowers.txt has been updated!")
+    greenPrint("\noldfollowers.txt has been updated!")
     s3 = '\n'.join(users)
     f1.write(s3)
     f1.close()
@@ -194,7 +195,7 @@ def scrape(username):
         instaDiscord.write('%s\n' % date.today().strftime("%B %d, %Y"))
        
         
-        instaDiscord.write("\n=================================\n\nList 1 - People that removed u:\n\n")
+        instaDiscord.write("=================================\n\nList 1 - People that removed u:\n\n")
         for count, removed in enumerate(match):
             instaDiscord.write(("{:02d}: {}".format(count+1, removed)))
 
@@ -207,7 +208,7 @@ def scrape(username):
         f5 = open('instaDiscord.txt', 'r', encoding="utf-8")
         file_contents = f5.read()
         hook.send(file_contents)
-       
+        lastClose()  
     else:
         greenPrint("\n\nThis is your first time running the script , run again to get unfollowers/added.\n")
         hook.send(disc)     
