@@ -1,6 +1,7 @@
 # instaTrack - Instagram followers/following tracker
 
 A simple script that will track your instagram account who you are following and they are not following back , who unfollowed you , and who added you.
+There are 2 versions right now , one that saves them in `instaTrack.txt` and prints them in your terminal window , and one that print them in your discord webhook bot.
 
 Tested only with 200-500-800 followers , so if u have any question you can ask me about it , report an issue.
 
