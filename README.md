@@ -32,6 +32,18 @@ If you think the program is taking too long scanning your followers , you can lo
 Run the program.
 * `python3 instaTrack.py`
 
+# Discord Webhook
+
+Edit 
+* `hook = Webhook('https://discord.com/api/webhooks/.........')` and put your discord webhook link.
+
+
+Run the program.
+[instaTrackDiscord](https://github.com/Boryyy/instaTrack/tree/main/instaTrackDiscord)
+
+
+* `python3 instaTrackDC.py`
+
 # Disclaimer
 
 * Dont forget to edit the seconds i mention before at [Setup](https://github.com/Boryyy/instaTrack#setup) , it will improve the script and you can get the track faster.
