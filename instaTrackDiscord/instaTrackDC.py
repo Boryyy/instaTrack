@@ -17,7 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager as CM
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
 from dhooks import Webhook
-hook = Webhook('https://discord.com/api/webhooks/.........') # put your discord webhook link!
+hook = Webhook('https://discord.com/api/webhooks/.........') # put your discord webhook link!!
 disc = ("This is your first time running the script , run again to get unfollowers/added.")
 def greenPrint(message):
     CGREEN = '\33[32m'
