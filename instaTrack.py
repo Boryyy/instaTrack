@@ -2,7 +2,7 @@ import os
 import time
 import selenium
 import sys
-
+import numpy as np
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -15,7 +15,6 @@ from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager as CM
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
-
 
 def greenPrint(message):
     CGREEN = '\33[32m'
@@ -30,20 +29,20 @@ def lastClose():
         quit()
 
 
-USERNAME = '' # put your bot account username
-PASSWORD = '' # put your bot account password
+
+USERNAME = '8qjy7nq' # put your bot account username
+PASSWORD = 'ubx7liwt' # put your bot account password
 
 
-usr = ('') # put the account you want to track
-
+usr = ('sefermahilaj') # put the account you want to track
 
 #TIME = FOLLOWERS / TIME1 FOLLOWING
 
 user_input = ('700')
 TIME = 0.070 * int(user_input)
 
-user_input1 = ('700')
-TIME1 = 0.070 * int(user_input1)
+user_input = ('700')
+TIME1 = 0.070 * int(user_input)
 
 
 def scrape(username):
@@ -157,28 +156,36 @@ def scrape(username):
     s2 = '\n'.join(users1)
     f.write(s2)
     f.close()   
-    file1 = open("oldfollowers.txt","r+")
-    file2 = open("followers.txt","r+") 
-    greenPrint("\n\nComparing lists now\n")
-    notFollower = list(set(users1) - set(users))  # following these people, but they are not following you back
-    match = (set(file1) - set(file2))    # getting unfollowers   
-    file1.close()
-    file2.close()
-    file3 = open("oldfollowers.txt","r")
-    file4 = open("followers.txt","r")   
-    added = list(set(file4) - set(file3)) # who added and removed u
-    greenPrint("\nPeople that you are following, but they do not follow you back:\n\n" + ' || '.join(notFollower) + "\n")
-    greenPrint("\nPeople that removed u:\n\n" ' || '+ ' || '.join(match))
-    greenPrint("\nPeople that added u:\n\n" ' || '+ ' || '.join(added))
-    writeToFile = ("y")
-    if(writeToFile.upper() == "YES" or writeToFile.upper() == "Y"):
-        greenPrint("\nEveryhing saved - instaTrack.txt'\n")
+
+
+    if os.path.exists('oldfollowers.txt'):
+    
+        file1 = open("oldfollowers.txt","r+")
+        file2 = open("followers.txt","r+") 
+        greenPrint("\n\nComparing lists now\n")
+        notFollower = list(set(users1) - set(users))  # following these people, but they are not following you back
+        match = (set(file1) - set(file2))    # getting unfollowers   
+        file1.close()
+        file2.close()
+        file3 = open("oldfollowers.txt","r")
+        file4 = open("followers.txt","r")   
+        added = list(set(file4) - set(file3)) # who added and removed u
+        greenPrint("\nPeople that you are following, but they do not follow you back:\n\n" + ' || '.join(notFollower) + "\n")
+        greenPrint("\nPeople that removed u:\n\n" ' || '+ ' || '.join(match))
+        greenPrint("\nPeople that added u:\n\n" ' || '+ ' || '.join(added))
+        f1 = open('oldfollowers.txt', 'w')
+        greenPrint("\noldfollowers.txt has been updated!")
+        s3 = '\n'.join(users)
+        f1.write(s3)
+        f1.close()
+        
+        greenPrint("\nEveryhing saved - instaTrack.txt'\n")       
         instaTrack = open("instaTrack.txt", "a+")
       
-        instaTrack.write("\n=================================\n")
+        instaTrack.write("\n=================================\n\n")
         instaTrack.write('%s\n' % date.today().strftime("%B %d, %Y"))
         
-        instaTrack.write("=================================\n\nList 1 - People that you are following, but they do not follow you back:\n\n")
+        instaTrack.write("\n=================================\n\nList 1 - People that you are following, but they do not follow you back:\n\n")
         for count, follower in enumerate(notFollower):
             instaTrack.write(("{:02d}: {}\n".format(count+1, follower)))
         
@@ -189,18 +196,14 @@ def scrape(username):
         
         instaTrack.write("\n=================================\n\nList 3 - People that added u:\n")
         for count, addedusr in enumerate(added):
-            instaTrack.write(("{:02d}: {}".format(count+1, addedusr)))
-
-        instaTrack.close()
-        
-        f1 = open('oldfollowers.txt', 'w')
-        greenPrint("oldfollowers.txt has been updated!")
-        s3 = '\n'.join(users)
-        f1.write(s3)
-        f1.close()
-        
-        lastClose()
-
+            instaTrack.write(("{:02d}: {}".format(count+1, addedusr))) 
+        instaTrack.close()            
+   
     else:
+       
+        notFollower = list(set(users1) - set(users))
+        greenPrint("\nPeople that you are following, but they do not follow you back:\n\n" + ' || '.join(notFollower) + "\n")
+        greenPrint("\n\nThis is your first time running the script , run again to get unfollowers/added.\n")
+       
         lastClose()
 scrape(usr)
