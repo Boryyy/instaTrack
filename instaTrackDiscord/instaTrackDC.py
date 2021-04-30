@@ -17,7 +17,7 @@ from webdriver_manager.chrome import ChromeDriverManager as CM
 from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
 from dhooks import Webhook
-hook = Webhook('https://discord.com/api/webhooks/832260698347143209/21cP7VgPkNub8XmzKB-5JHdx6cKWIQIsVFXkOVnkd5GqMy41qFRavo9rM1ihwD1H1719') # put your discord webhook link!
+hook = Webhook('https://discord.com/api/webhooks/.........') # put your discord webhook link!
 disc = ("This is your first time running the script , run again to get unfollowers/added.")
 def greenPrint(message):
     CGREEN = '\33[32m'
@@ -32,11 +32,11 @@ def lastClose():
         quit()
 
 
-USERNAME = '8qjy7nq' # put your bot account username
-PASSWORD = 'ubx7liwt' # put your bot account password
+USERNAME = '' # put your bot account username
+PASSWORD = '' # put your bot account password
 
 
-usr = ('sefermahilaj') # put the account you want to track
+usr = ('') # put the account you want to track
 
 
 #TIME = FOLLOWERS / TIME1 FOLLOWING
