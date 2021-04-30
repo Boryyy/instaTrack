@@ -30,11 +30,11 @@ def lastClose():
 
 
 
-USERNAME = '8qjy7nq' # put your bot account username
-PASSWORD = 'ubx7liwt' # put your bot account password
+USERNAME = '' # put your bot account username
+PASSWORD = '' # put your bot account password
 
 
-usr = ('sefermahilaj') # put the account you want to track
+usr = ('') # put the account you want to track
 
 #TIME = FOLLOWERS / TIME1 FOLLOWING
 
