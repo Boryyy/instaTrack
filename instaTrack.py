@@ -29,7 +29,6 @@ def lastClose():
         quit()
 
 
-
 USERNAME = '' # put your bot account username
 PASSWORD = '' # put your bot account password
 
