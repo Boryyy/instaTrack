@@ -22,19 +22,12 @@ If you are using windows and this command is not working try :
 
 You have to edit the code and put your bot/account you want to track.
 
-* Line 33 `USERNAME = ''` you have to put username of your bot account.
-* Line 34 `PASSWORD = ''` you have to put password of your bot account.
-* Line 37 `usr = ('')` put the account you want to track.
+* `USERNAME = ''` you have to put username of your bot account.
+* `PASSWORD = ''` you have to put password of your bot account.
+* `usr = ('')` put the account you want to track.
 
 If you think the program is taking too long scanning your followers , you can lower the seconds at:
-Line 42,45
 * `user_input = ('700')` , i have 500 followers so i put it at 700 , you can test your own.
-
-Create 3 .txt files , 
-
-* `followers.txt`
-* `following.txt`
-* `oldfollowers.txt`
 
 Run the program.
 * `python3 instaTrack.py`
@@ -43,4 +36,3 @@ Run the program.
 
 * Dont forget to edit the seconds i mention before at [Setup](https://github.com/Boryyy/instaTrack#setup) , it will improve the script and you can get the track faster.
 
-* First time that you run the script , it will show "Added Followers" the full list of your followers , then 2nd run and future ones will show who removed and who added you.
