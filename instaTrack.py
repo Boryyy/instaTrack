@@ -29,6 +29,7 @@ def lastClose():
         quit()
 
 
+
 USERNAME = '' # put your bot account username
 PASSWORD = '' # put your bot account password
 
@@ -173,7 +174,7 @@ def scrape(username):
         greenPrint("\nPeople that removed u:\n\n" ' || '+ ' || '.join(match))
         greenPrint("\nPeople that added u:\n\n" ' || '+ ' || '.join(added))
         f1 = open('oldfollowers.txt', 'w')
-        greenPrint("\noldfollowers.txt has been updated!")
+        greenPrint("oldfollowers.txt has been updated!")
         s3 = '\n'.join(users)
         f1.write(s3)
         f1.close()
@@ -197,12 +198,17 @@ def scrape(username):
         for count, addedusr in enumerate(added):
             instaTrack.write(("{:02d}: {}".format(count+1, addedusr))) 
         instaTrack.close()            
-   
+        lastClose()
     else:
        
         notFollower = list(set(users1) - set(users))
         greenPrint("\nPeople that you are following, but they do not follow you back:\n\n" + ' || '.join(notFollower) + "\n")
         greenPrint("\n\nThis is your first time running the script , run again to get unfollowers/added.\n")
+        f1 = open('oldfollowers.txt', 'w')
+        greenPrint("oldfollowers.txt has been updated!")
+        s3 = '\n'.join(users)
+        f1.write(s3)
+        f1.close()
        
         lastClose()
 scrape(usr)
