@@ -14,7 +14,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 from webdriver_manager.chrome import ChromeDriverManager as CM
-from apscheduler.schedulers.blocking import BlockingScheduler
 from datetime import date
 from dhooks import Webhook
 hook = Webhook('https://discord.com/api/webhooks/......') # put your discord webhook link!
