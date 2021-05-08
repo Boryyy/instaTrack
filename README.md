@@ -2,7 +2,7 @@
 
 A simple script that will track your instagram account who you are following and they are not following back , who unfollowed you , and who added you.
 
-There are 2 versions right now , one that saves them in `instaTrack.txt` and prints them in your terminal window , and one that print them in your discord webhook bot.
+There are 3 versions right now , one that saves them in `instaTrack.txt` and prints them in your terminal window , one that print them in your discord webhook bot , and one that send u the list in your instagram ur tracking!
 
 Tested only with 200-500-800 followers , so if u have any question you can ask me about it , report an issue.
 
@@ -50,3 +50,4 @@ Run the program.
 
 * Dont forget to edit the seconds i mention before at [Setup](https://github.com/Boryyy/instaTrack#setup) , it will improve the script and you can get the track faster.
 
+* [instaTrackDM](https://github.com/Boryyy/instaTrack/tree/main/instaTrackDM) - will send you a message with the list of who removed/added you.
