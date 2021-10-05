@@ -18,9 +18,9 @@ If you are using windows and this command is not working try :
 
 2) You will need two accounts , the main account of the followers that you want to track and one bot account.
 
-3) Adding the bot account in the python code.
+3) Adding the main account and the bot account.
 
-You have to edit the code and put your bot/account you want to track.
+You have to edit the code and put your main account then the bot account you want to track.
 
 * `USERNAME = ''` you have to put username of your main account.
 * `PASSWORD = ''` you have to put password of your main account.
