@@ -1,16 +1,14 @@
-# instaTrack - Instagram followers/following tracker
+# instaTrack - Instagram followers tracker.
 
-A simple script that will track your instagram account who you are following and they are not following back , who unfollowed you , and who added you.
+A simple script that will track your instagram followers , if anyone removes you or add you , and then a bot account will print it into your dm account. ( You need two accounts , the main account that has the followers , and an bot account.)
 
-There are 3 versions right now , one that saves them in `instaTrack.txt` and prints them in your terminal window , one that print them in your discord webhook bot , and one that send u the list in your instagram ur tracking!
-
-Tested only with 200-500-800 followers , so if u have any question you can ask me about it , report an issue.
+Tested with 500 followers and it takes like less than a minute , if you have more followers will take longer.
 
 
 # Setup
 1) Install the dependencies. Run this command in the command line:
 
-* `cd C:/path/to/directory/with/program/`
+* `cd C:/path/to/directory/with/program/instaTrackDM`
 * `pip3 install -r requirements.txt`
 
 If you are using windows and this command is not working try :
@@ -18,36 +16,21 @@ If you are using windows and this command is not working try :
 * `py -m pip install -r requirements.txt`
 
 
-2) You will need an bot account , or use your own account , but i suggest to use a bot account , then add the account you want to track.
+2) You will need two accounts , the main account of the followers that you want to track and one bot account.
 
 3) Adding the bot account in the python code.
 
 You have to edit the code and put your bot/account you want to track.
 
-* `USERNAME = ''` you have to put username of your bot account.
-* `PASSWORD = ''` you have to put password of your bot account.
-* `usr = ('')` put the account you want to track.
+* `USERNAME = ''` you have to put username of your main account.
+* `PASSWORD = ''` you have to put password of your main account.
+
+* `SUSERNAME = ''` you have to put username of your bot account.
+* `SPASSWORD = ''` you have to put password of your bot account.
 
 If you think the program is taking too long scanning your followers , you can lower the seconds at:
-* `user_input = ('700')` , i have 500 followers so i put it at 700 , you can test your own.
+* `time.sleep(2) line 100` If you want it as fast as posible remove the whole row , or try (1).
 
 Run the program.
-* `python3 instaTrack.py`
+* `python instaTrackDM.py`
 
-# Discord Webhook
-
-Edit 
-* `hook = Webhook('https://discord.com/api/webhooks/.........')` and put your discord webhook link.
-
-
-Run the program.
-[instaTrackDiscord](https://github.com/Boryyy/instaTrack/tree/main/instaTrackDiscord)
-
-
-* `python3 instaTrackDC.py`
-
-# Disclaimer
-
-* Dont forget to edit the seconds i mention before at [Setup](https://github.com/Boryyy/instaTrack#setup) , it will improve the script and you can get the track faster.
-
-* [instaTrackDM](https://github.com/Boryyy/instaTrack/tree/main/instaTrackDM) - will send you a message with the list of who removed/added you.
