@@ -1,6 +1,6 @@
 # instaTrack - Instagram followers tracker.
 
-A simple script that will track your instagram followers , if anyone removes you or add you , and then a bot account will print it into your dm account. ( You need two accounts , the main account that has the followers , and an bot account.)
+A simple script that will track your instagram followers , if anyone removes you or add you , and then a bot account will print it into your dm account. It has cookie support , the script will make you login only once. ( You need two accounts , the main account that has the followers , and an bot account.)
 
 Tested with 500 followers and it takes like less than a minute , if you have more followers will take longer.
 
