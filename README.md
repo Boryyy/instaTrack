@@ -34,3 +34,6 @@ If you think the program is taking too long scanning your followers , you can lo
 Run the program.
 * `python instaTrackDM.py`
 
+# 24/7 Support
+
+* If you want to run this script 24/7 like i do , it will send you daily message at decent time of the day (you choose), report an issue or add me on discord bory#8037
